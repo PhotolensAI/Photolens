@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Photolens</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <style>
+    body {
+      font-family: 'Cascadia Code', sans-serif;
+      background: linear-gradient(to bottom right, #acc2e6, #ebdfc3);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 32px;
+      color: #333333;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 18px;
+      color: #666666;
+      margin-bottom: 10px;
+    }
+
+    .info-box {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+
+    .mini-box {
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .mini-box h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .mini-box p {
+      font-size: 16px;
+      color: #666666;
+    }
+
+    .button-container {
+      margin-top: 40px;
+    }
+
+    .cta-button {
+      font-size: 20px;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-right: 10px;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      background-color: #333333;
+      color: #ffffff;
+    }
+
+    .cta-button:hover {
+      background-color: #555555;
+    }
+
+    .demo-button {
+      font-size: 20px;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-right: 10px;
+      background: linear-gradient(45deg, #ff69b4, #00ced1); /* Updated colors to more distinct ones */
+      background-size: 200% 200%;
+      color: #ffffff;
+      transition: background 1s ease-in-out, color 0.5s ease-in-out;
+    }
+    
+    .demo-button:hover {
+      background-position: right bottom;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Photolens</h1>
+    <p class="description">Photolens combines various visual and text models to create a powerful combination that can generate and edit images. Possibilities are endless with Photolens. Free demo is available!</p>
+    <p class="description">Explore the pros that Photolens will offer:</p>
+    <div class="info-box">
+      <div class="mini-box">
+        <h3>Cost effective 💵</h3>
+        <p>Photolens comes up with the optimal prompt so it saves money.</p>
+      </div>
+      <div class="mini-box">
+        <h3>Time saving ⏳</h3>
+        <p>Photolens understands you quickly and develops a way to handle your situation in no time.</p>
+      </div>
+      <div class="mini-box">
+        <h3>No effort 💪</h3>
+        <p>Make images with no effort. You don't even need to know what to make.</p>
+      </div>
+      <div class="mini-box">
+        <h3>Productive ⬆️</h3>
+        <p>Even if you are a professional, Photolens will make your prompts even better.</p>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <p class="description">Made by an indie programmer.</p>
+    </div>
+
+    <br><br>
+
+    <div class="button-container">
+      <a href="/demo" class="demo-button">Demo</a>
+      <a href="https://discord.gg/QJT3e6ABz8" target="_blank" class="cta-button">Join Discord</a>
+      <a href="https://github.com/Photolens" target="_blank" class="cta-button">Visit GitHub</a>
+    </div>
+  </div>
+</body>
+</html>

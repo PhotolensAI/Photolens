@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Photolens | Login</title>
+  <style>
+    body {
+      font-family: 'Cascadia Code', sans-serif;
+      background: linear-gradient(to bottom right, #acc2e6, #ebdfc3);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 300px;
+      padding: 40px;
+      text-align: center;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+      /* Updated styles for border and shadow */
+      border: 1px solid #d1d1d1;
+    }
+
+    .title {
+      font-size: 32px;
+      color: #333333;
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+
+    input[type="password"],
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      color: #171717;
+      font-size: 16px;
+      line-height: 1.4;
+      width: 100%;
+      box-sizing: border-box;
+      /* Updated styles for border and shadow */
+      border: 1px solid #d1d1d1;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      /* Remove default outline on focus */
+      outline: none;
+    }
+
+    input[type="submit"] {
+      font-family: 'Cascadia Code', sans-serif;
+      font-size: 14px;
+      border-radius: 3px;
+      padding: 10px;
+      cursor: pointer;
+      width: 100%;
+      margin-right: 10px;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      background-color: #d6d6d6;
+      color: #333333;
+      /* Updated styles for border and shadow */
+      border: 1px solid #d1d1d1;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      /* Remove default outline on focus */
+      outline: none;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #c7c7c7;
+    }
+
+    .cta-button {
+      display: block;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Log In</h1>
+    <br><br>
+    <form action="/login" method="post">
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" placeholder="Email" required>
+      <br><br>
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" placeholder="Password" required>
+      <br><br>
+
+      <input type="submit" value="Log In">
+    </form>
+
+    <br><br>
+    <p style="signup-link">Don't have an account? <a href="/signup">Sign Up</a></p>
+  </div>
+</body>
+</html>
