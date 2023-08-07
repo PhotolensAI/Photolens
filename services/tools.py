@@ -19,7 +19,7 @@ llm = ChatOpenAI(
     openai_api_key=os.environ["OPENAI_API_KEY"]
 )
 res = [None]
-SYSTEM_MESSAGE = system_messages.ONE_SHOT_LITTLE_TEXT
+SYSTEM_MESSAGE = system_messages.ZERO_SHOT_LITTLE_TEXT
 
 
 
