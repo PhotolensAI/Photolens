@@ -61,3 +61,4 @@ typing-inspect==0.9.0
 typing_extensions==4.7.1
 uritemplate==4.1.1
 yarl==1.9.2
+python_dotenv
