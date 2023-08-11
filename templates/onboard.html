@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Photolens</title>
   <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <style>
     body {
       font-family: 'Cascadia Code', sans-serif;
@@ -12,7 +13,7 @@
       padding: 0;
     }
 
-    .container {
+    .my-container {
       max-width: 600px;
       margin: 0 auto;
       padding: 40px;
@@ -94,7 +95,36 @@
   </style>
 </head>
 <body>
-  <div class="container">
+
+  <section class="shadow mb-5">
+    <nav class="navbar navbar-expand-md bg-white navbar-light">
+
+        <div class="container">
+
+            <a href="" class="nav-brand text-dark p-2">
+                <img src="/logo.png" width="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTwo">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarTwo">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item mt-lg-1"> <b><a href="#" class="nav-link active">Home</a></b></li>
+                    <li class="nav-item mt-lg-1"> <b><a href="#" class="nav-link">Chat</a></b></li>
+                    <li class="nav-item mt-lg-1"> <b><a href="#" class="nav-link">Login</a></b></li>
+                    <li class="nav-item mt-lg-1"> <b><a href="#" class="nav-link">Sign Up</a></b></li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+</section>
+
+  <div class="my-container">
     <h1 class="title">Photolens</h1>
     <p class="description">Photolens combines various visual and text models to create a powerful combination that can generate and edit images. Possibilities are endless with Photolens. Free demo is available!</p>
     <p class="description">Explore the pros that Photolens will offer:</p>
@@ -129,5 +159,8 @@
       <a href="https://github.com/PhotolensAI" target="_blank" class="cta-button">Visit GitHub</a>
     </div>
   </div>
+
+  <!-- Bootstrap Js-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
