@@ -50,7 +50,7 @@ pydantic==1.10.12
 PyJWT==2.8.0
 pyparsing==3.1.0
 PyYAML==6.0.1
-replicate==0.9.0
+replicat
 requests==2.31.0
 rsa==4.9
 six==1.16.0
