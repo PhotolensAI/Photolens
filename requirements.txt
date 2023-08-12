@@ -25,3 +25,4 @@ replicate
 requests==2.31.0
 python_dotenv
 torch
+langchain[all]==0.0.252
