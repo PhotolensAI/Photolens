@@ -30,7 +30,7 @@ async def send_msg(prompt, username, conversation_name):
         output_link = replicate.run(
             "lucataco/realistic-vision-v5.1:784f2ade7f143eec054227ada3603908f56c0d1f941d50c6dab42545dba89f63",
             input={
-                "prompt": f"RAW photo, {prompt}, 8k uhd, high quality, film grain, Fujifilm XT3"
+                "prompt": f"RAW photo, {prompt}, 8k uhd, high quality, film grain, Fujifilm XT3",
                 "width": 512,
                 "height": 512,
             }
