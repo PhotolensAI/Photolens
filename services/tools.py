@@ -27,10 +27,15 @@ async def send_msg(prompt, username, conversation_name):
 
     ### funcs
     def realistic_vision_v1_4(prompt: str):
-        API_URL = "https://api-inference.huggingface.co/models/SG161222/Realistic_Vision_V1.4"
-        headers = {"Authorization": f"Bearer {os.environ['HUGGINGFACEHUB_API_TOKEN']}"}
-        image_bytes = requests.post(API_URL, headers=headers, json={"inputs": "RAW photo, " + prompt + ", 8k uhd, high quality, film grain, Fujifilm XT3"})
-        db.upload_img(username, conversation_name, image_bytes.content)
+        output_link = replicate.run(
+            "width": 512,
+            "height": 512.
+            "lucataco/realistic-vision-v5.1:784f2ade7f143eec054227ada3603908f56c0d1f941d50c6dab42545dba89f63",
+            
+            input={"prompt": "RAW photo, a portrait photo of a latina woman in casual clothes, natural skin, 8k uhd, high quality, film grain, Fujifilm XT3"}
+        )
+        output = db.get_img_bytes_from_link(output_link)
+        db.upload_img(username, conversation_name, output)
         return "Successfully generated image."
 
     def instruct_pix2pix(prompt: str):
