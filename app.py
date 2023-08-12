@@ -82,3 +82,7 @@ def chat():
         }
 
     return flask.render_template("chat.html", msg=msg)
+
+@app.route("/")
+def index():
+    return flask.render_template("onboard.html")
