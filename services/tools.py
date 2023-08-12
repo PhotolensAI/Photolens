@@ -29,9 +29,8 @@ async def send_msg(prompt, username, conversation_name):
     def realistic_vision_v1_4(prompt: str):
         output_link = replicate.run(
             "width": 512,
-            "height": 512.
+            "height": 512,
             "lucataco/realistic-vision-v5.1:784f2ade7f143eec054227ada3603908f56c0d1f941d50c6dab42545dba89f63",
-            
             input={"prompt": "RAW photo, a portrait photo of a latina woman in casual clothes, natural skin, 8k uhd, high quality, film grain, Fujifilm XT3"}
         )
         output = db.get_img_bytes_from_link(output_link)
