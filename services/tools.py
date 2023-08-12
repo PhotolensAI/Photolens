@@ -143,9 +143,9 @@ async def send_msg(prompt, username, conversation_name):
         return output
 
     ### tools
-    realistic_vision_v51_gen_tool = Tool( #Realistic Vision v1.4
-        name="Image generating with realistic_vision_v1_4 model",
-        func=realistic_vision_v1_4,
+    realistic_vision_v51_gen_tool = Tool( #Realistic Vision v5.1
+        name="Image generating with realistic vision v5.1 model",
+        func=realistic_vision_v5_1,
         description="Generate realistic DSLR-shot-like images with realistic vision v1.4 model. A prompt like \"a DSLR photo of a dog standing on a rock, narrow depth of field\" is decent for this model. Once the tool says \"Successfully generated image\", say \"Image generated\" or something like that. This model is trained on English prompts, so always enter English prompts for this model, even if the user is not talking in English."
     )
     instruct_pix2pix_edit_tool = Tool( #Instruct-pix2pix
