@@ -34,5 +34,5 @@ def query():
     Returns:
          - A JSON response containing the output of the query.
     """
-    output = query(request.args.get("msg_inp"), request.args.get("username"), request.args.get("conversation_name"))
+    output = query_model(request.args.get("msg_inp"), request.args.get("username"), request.args.get("conversation_name"))
     return jsonify(output)
