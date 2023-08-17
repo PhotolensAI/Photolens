@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from routes.query import query
+from routes.query import query_model
 
 app = Flask(__name__)
 

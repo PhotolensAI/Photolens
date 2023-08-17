@@ -12,13 +12,13 @@ load_dotenv()
 # cred init
 db_key = os.environ["PRIVATE_KEY"]
 db_key_id = os.environ["PRIVATE_KEY_ID"]
-cred_file = json.loads(open("services/firebase_sdk_secret.json", "r").read())
+cred_file = json.loads(open("backend/services/firebase_sdk_secret.json", "r").read())
 cred_file["private_key"] = db_key
 cred_file["private_key_id"] = db_key_id
 API_KEY = os.environ["API_KEY"]
-open("services/firebase_sdk_secret_mod.json", "w").write(json.dumps(cred_file))
+open("backend/services/firebase_sdk_secret_mod.json", "w").write(json.dumps(cred_file))
 
-cred = credentials.Certificate("services/firebase_sdk_secret_mod.json")
+cred = credentials.Certificate("backend/services/firebase_sdk_secret_mod.json")
 firebase_admin.initialize_app(cred, {"databaseURL": "https://photolensdb-default-rtdb.firebaseio.com/", "storageBucket": "photolensdb.appspot.com"})
 
 
