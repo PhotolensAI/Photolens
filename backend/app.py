@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+import asyncio
 from routes.query import query_model
 
 app = Flask(__name__)
@@ -34,5 +35,9 @@ def query():
     Returns:
          - A JSON response containing the output of the query.
     """
-    output = query_model(request.args.get("msg_inp"), request.args.get("username"), request.args.get("conversation_name"))
-    return jsonify(output)
+    output = asyncio.run(query_model(request.args.get("msg_inp"), request.args.get("username"), request.args.get("conversation_name")))
+    print(output)
+    return output
+
+if __name__ == "__main__":
+    app.run(debug=True)
