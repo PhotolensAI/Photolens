@@ -12,6 +12,6 @@ async def query_model(msg_inp: str, username: str, conversation_name: str):
     }
     if current_image_path is not None:
         img = db.get_img(username, conversation_name, current_image_path)
-        response["img_bytes"] = f"data:image/jpeg;base64,{img}"
+        response["img_bytes"] = img
 
     return response

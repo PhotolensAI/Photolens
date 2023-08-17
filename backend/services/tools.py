@@ -26,11 +26,17 @@ SYSTEM_MESSAGE = system_messages.ZERO_SHOT_LITTLE_TEXT
 async def send_msg(prompt, username, conversation_name):
 
     ### funcs
-    def realistic_vision_v1_4(prompt: str):
-        API_URL = "https://api-inference.huggingface.co/models/SG161222/Realistic_Vision_V1.4"
-        headers = {"Authorization": f"Bearer {os.environ['HUGGINGFACEHUB_API_TOKEN']}"}
-        image_bytes = requests.post(API_URL, headers=headers, json={"inputs": "RAW photo, " + prompt + ", 8k uhd, high quality, film grain, Fujifilm XT3"})
-        db.upload_img(username, conversation_name, image_bytes.content)
+    def realistic_vision_v5_1(prompt: str):
+        output_link = replicate.run(
+            "lucataco/realistic-vision-v5.1:784f2ade7f143eec054227ada3603908f56c0d1f941d50c6dab42545dba89f63",
+            input={
+                "prompt": f"RAW photo, {prompt}, 8k uhd, high quality, film grain, Fujifilm XT3",
+                "width": 512,
+                "height": 512,
+            }
+        )
+        output = db.get_img_bytes_from_link(output_link)
+        db.upload_img(username, conversation_name, output)
         return "Successfully generated image."
 
     def instruct_pix2pix(prompt: str):
@@ -137,9 +143,9 @@ async def send_msg(prompt, username, conversation_name):
         return output
 
     ### tools
-    realistic_vision_v14_gen_tool = Tool( #Realistic Vision v1.4
-        name="Image generating with realistic_vision_v1_4 model",
-        func=realistic_vision_v1_4,
+    realistic_vision_v51_gen_tool = Tool( #Realistic Vision v5.1
+        name="Image generating with realistic vision v5.1 model",
+        func=realistic_vision_v5_1,
         description="Generate realistic DSLR-shot-like images with realistic vision v1.4 model. A prompt like \"a DSLR photo of a dog standing on a rock, narrow depth of field\" is decent for this model. Once the tool says \"Successfully generated image\", say \"Image generated\" or something like that. This model is trained on English prompts, so always enter English prompts for this model, even if the user is not talking in English."
     )
     instruct_pix2pix_edit_tool = Tool( #Instruct-pix2pix
@@ -170,7 +176,7 @@ async def send_msg(prompt, username, conversation_name):
 
     if db.get_last_img_path(username, conversation_name):
         tools = [
-            realistic_vision_v14_gen_tool,
+            realistic_vision_v51_gen_tool,
             instruct_pix2pix_edit_tool,
             auto_remove_anything_edit_tool,
             gfpgan_face_restore_tool,
@@ -179,7 +185,7 @@ async def send_msg(prompt, username, conversation_name):
         ]
     else:
         tools = [
-            realistic_vision_v14_gen_tool,
+            realistic_vision_v51_gen_tool,
         ]
 
     memory = ConversationBufferWindowMemory(
