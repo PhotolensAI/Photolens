@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import asyncio
 import cv2
 
-import SETTINGS
+import resources.SETTINGS as SETTINGS
 import resources.system_messages as system_messages
 import services.database as db
 from langchain.agents import Tool, initialize_agent
@@ -15,7 +15,7 @@ import replicate
 load_dotenv()
 
 llm = ChatOpenAI(
-    temperature=.9,
+    temperature=SETTINGS.TEMPERATURE,
     openai_api_key=os.environ["OPENAI_API_KEY"]
 )
 res = [None]
