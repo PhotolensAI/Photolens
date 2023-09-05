@@ -1,7 +1,7 @@
 # Backend
 
 ## Getting the api started locally
-Clone the repo to run the app locally. And get the packages. Setting up a venv is recommended.
+Clone the repo to run the api locally. And get the packages. Setting up a venv is recommended.
 ```bash
 git clone https://github.com/PhotolensAI/Photolens.git
 
