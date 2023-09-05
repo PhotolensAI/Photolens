@@ -1,4 +1,4 @@
-﻿# Official repo for photolens.
+﻿# Official repo for Photolens AI.
 
 ## Models:
  - Chat Model: [**ChatGPT**](https://openai.com/blog/chatgpt)
