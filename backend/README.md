@@ -11,7 +11,7 @@ pip install -r backend/requirements.txt
 ### Enviorment
 You have to have a `.env` in backend/ that will include:
  - Api keys for OpenAI, Replicate, HuggingFace
- - Api key, private key, private key id
+ - Firebase database api key, private key, private key id
 
 Also, you have to modify the `firebase_sdk_secret.json` to access to your own database
 
